@@ -10,7 +10,7 @@ body {
   margin: 0;
   font-family: 'Arimo', sans-serif;
 
-  &:before {
+/*   &:before {
     content: '';
     content: "";
     width: 100%;
@@ -26,7 +26,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #FAFBFC;
-  }
+  } */
 
   .buttonBar {
     transition: all 0.2s ease-in-out;
@@ -43,8 +43,78 @@ body {
   }
 
   .searchInputHome::placeholder {
-      color: black;
+    color: black;
+  }
+
+  .Modal {
+    position: fixed;
+    top: 180px;
+    left: 365px;
+    right: 365px;
+    bottom: 180px;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(17, 17, 17, 0.85);
+  }
+
+  /* Media Queries */
+
+  /* Phones in portrait mode */
+  @media (max-width: 768px) and (orientation: portrait) {
+    .Modal {
+      top: 250px;
+      left: 10px;
+      right: 10px;
+      bottom: 250px;
     }
+  }
+
+  /* Phones in landscape mode */
+  @media (max-width: 768px) and (orientation: landscape) {
+    .Modal {
+      top: 10px;
+      left: 50px;
+      right: 50px;
+      bottom: 10px;
+    }
+  }
+
+  /* Tablets in portrait mode */
+  @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+    .Modal {
+      top: 150px;
+      left: 75px;
+      right: 75px;
+      bottom: 150px;
+    }
+  }
+
+  /* Tablets in landscape mode */
+  @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+    .Modal {
+      top: 20px;
+      left: 100px;
+      right: 100px;
+      bottom: 20px;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1280px) and (orientation: landscape) {
+    .Modal {
+      top: 150px;
+      left: 150px;
+      right: 150px;
+      bottom: 150px;
+    }
+  }
+
 }
 
 .text-shadow {
@@ -72,6 +142,41 @@ body {
     &:hover {
       width: 60px;
     }
+  }
+
+  .react-multi-carousel-dot button:hover:active {
+    background: #EB524D
+  }
+
+  .react-multi-carousel-dot button {
+    background: #A9A9A9
+  }
+
+  .react-multi-carousel-dot--active button {
+    background: #EB524D
+  }
+
+  .react-multi-carousel-dot button {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    opacity: 1;
+    padding: 5px 5px 5px 5px;
+    box-shadow: none;
+    transition: background .5s;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0);
+    padding: 0;
+    margin: 0 8px;
+    margin-right: 6px;
+    outline: 0;
+    cursor: pointer
+  }
+
+  .custom-dot-list-style {
+    padding: 10px 0;
   }
 
 }
