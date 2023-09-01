@@ -54,6 +54,29 @@ export const getCategories = async () => {
 
   return result.categories;
 };
+export const getLinksDownload = async () => {
+  const query = gql`
+    query getLinksDownloads {
+      linksDownloads {
+        title
+        id
+        asset {
+          id
+          url
+          fileName
+          handle
+        }
+        image {
+          url
+        }
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query);
+
+  return result.linksDownloads;
+};
 
 export const getAuthors = async () => {
   const query = gql`

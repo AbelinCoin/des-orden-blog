@@ -25,3 +25,4 @@ export { default as YoutubeGrid } from './YoutubeGrid';
 export { default as ContactCard } from './ContactCard';
 export { default as ContactForm } from './ContactForm';
 export { default as Companies } from './Companies';
+export { default as AssetsList } from './AssetsList';
