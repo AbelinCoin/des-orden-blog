@@ -65,6 +65,7 @@ export const getLinksDownload = async () => {
           url
           fileName
           handle
+          mimeType
         }
         image {
           url
