@@ -1,14 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBars, faX } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { usePostStore } from '../stores/globalStore';
 import { searchPostSByTitle } from '../services';
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [searchParam, setSearchParam] = useState('');
+  const router = useRouter();
+
+  console.log(router.query.query);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -25,13 +29,24 @@ const Header = () => {
 
   const handleKeyDown = async (event) => {
     if (event.key === 'Enter') {
-      const searchedPosts = (await searchPostSByTitle(searchParam)) || [];
+      if (router.pathname !== '/blog' || router.pathname !== '/') router.push(`/blog?query=${searchParam}`);
+      if (router.query.query === undefined) {
+        const searchedPosts = (await searchPostSByTitle(searchParam)) || [];
+        updatePosts(constructArray(searchedPosts));
+        setSearchParam('');
+        if (isSidebarOpen) setIsSidebarOpen(!isSidebarOpen);
+      }
+    }
+  };
 
+  useEffect(async () => {
+    if (router.query.query !== undefined) {
+      const searchedPosts = (await searchPostSByTitle(router.query.query)) || [];
       updatePosts(constructArray(searchedPosts));
       setSearchParam('');
       if (isSidebarOpen) setIsSidebarOpen(!isSidebarOpen);
     }
-  };
+  }, [router.query.query]);
 
   return (
     <div className="container mx-auto px-4 sm:px-10 mb-4 pt-3 flex flex-wrap items-center justify-between">

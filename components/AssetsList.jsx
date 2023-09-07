@@ -8,8 +8,8 @@ function AssetsList({ linksDownload }) {
     'application/pdf': 'PDF',
     'image/jpeg': 'Imagen',
   };
-  const AssetCard = ({ linkData, key }) => (
-    <div key={key} className="flex flex-col items-center justify-between w-full md:w-1/2 lg:w-trecol mb-6 border border-thirdthegray rounded-lg">
+  const AssetCard = ({ linkData, keyData }) => (
+    <div key={keyData} className="relative flex flex-col items-center justify-between w-full md:w-1/2 lg:w-trecol mb-6 border border-thirdthegray rounded-lg">
       <Image
         className="object-top absolute h-80 w-full object-cover rounded-t-lg"
         src={linkData?.image?.url}
@@ -34,7 +34,7 @@ function AssetsList({ linksDownload }) {
     <>
       <div className="py-4 flex flex-col md:flex-row gap-x-3 justify-center">
         {linksDownload.map((linkData, index) => (
-          <AssetCard key={index + linkData.id} linkData={linkData} />
+          <AssetCard keyData={index + linkData.id} linkData={linkData} />
         ))}
       </div>
     </>
