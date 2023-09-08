@@ -12,8 +12,6 @@ const Header = () => {
   const [searchParam, setSearchParam] = useState('');
   const router = useRouter();
 
-  console.log(router.query.query);
-
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -113,6 +111,9 @@ const Header = () => {
         </Link>
         <Link href="/contacto">
           <a className="text-black font-normal cursor-pointer mr-4">Contacto</a>
+        </Link>
+        <Link href="/resources">
+          <a className="text-black font-normal cursor-pointer mr-4">Recursos</a>
         </Link>
       </div>
 
