@@ -1,6 +1,6 @@
 import React from 'react';
 import { getLinksDownload } from '../../services';
-import { AssetsList } from '../../components';
+import { AssetsList, NewsLetterBanner/* , Pagination */ } from '../../components';
 
 function ResourcesPage({ linksDownload }) {
   console.log(linksDownload);
@@ -13,6 +13,8 @@ function ResourcesPage({ linksDownload }) {
           <h4 className="text-xl text-center py-3 text-secondthegray">Nuestros recursos especiales disponibles para su descarga</h4>
         </div>
         <AssetsList linksDownload={linksDownload} />
+        {/* <Pagination /> */}
+        <NewsLetterBanner />
       </div>
     </div>
   );

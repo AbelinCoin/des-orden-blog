@@ -9,7 +9,7 @@ function AssetsList({ linksDownload }) {
     'image/jpeg': 'Imagen',
   };
   const AssetCard = ({ linkData, keyData }) => (
-    <div key={keyData} className="relative flex flex-col items-center justify-between w-full md:w-1/2 lg:w-trecol mb-6 border border-thirdthegray rounded-lg">
+    <div key={keyData} className="relative flex flex-col items-center justify-between w-full md:w-1/2 lg:w-trecol mb-6 border border-gray rounded-lg">
       <Image
         className="object-top absolute h-80 w-full object-cover rounded-t-lg"
         src={linkData?.image?.url}
@@ -23,8 +23,8 @@ function AssetsList({ linksDownload }) {
       </ul>
       <div className="py-1 text-xl w-4/5 text-center">{linkData.title}</div>
       <a className="py-3 mb-2 align-center" target="_blank" href={linkData.asset.url} rel="noreferrer">
-        <span className="transition duration-500 ease transform hover:-translate-y-1 inline-block bg-white text-black border border-black text-md font-medium rounded-md w-4/3 px-6 py-2 cursor-pointer">
-          Descargar <FontAwesomeIcon className="text-xl" icon={faChevronDown} />
+        <span className="transition duration-500 ease transform hover:-translate-y-1 inline-block bg-white text-black border border-black text-md font-medium rounded-sm w-4/3 px-6 py-2 cursor-pointer">
+          Descargar <FontAwesomeIcon className="text-md" icon={faChevronDown} />
         </span>
       </a>
     </div>
