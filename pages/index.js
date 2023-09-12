@@ -53,7 +53,7 @@ export default function Home({ posts }) {
       (category) => category.slug === categorySlug,
     ));
 
-  const postsPerPage = filteredPosts.length <= 6 ? filteredPosts.length : 7;
+  const postsPerPage = filteredPosts.length <= 3 ? filteredPosts.length : 4;
   const [currentPage, setCurrentPage] = useState(1);
 
   const indexOfLastPost = currentPage * postsPerPage;
@@ -78,19 +78,19 @@ export default function Home({ posts }) {
     <div className="px-1 mb-8 mx-2 sm:mx-24">
       <BannerWithImage isHome />
       <CategoriesBar setCategorySlug={setCategorySlug} setCurrentPage={setCurrentPage} />
-      <div className="flex flex-col md:flex-row gap-4">
-        <div className="flex flex-wrap w-full gap-3 mb-12 justify-center">
+      <div className="flex flex-col md:flex-row">
+        <div className="flex flex-wrap w-full gap-x-5 gap-y-3 mb-12 justify-center">
           {currentPosts.length === 0 ? <NoDataToShow />
             : currentPosts.map((post, index) => {
               if (index === 0) {
                 return (
-                  <div ref={scrollReference} key={post.node.title} className="w-full md:w-full lg:w-full border border-thirdthegray lg:rounded-lg rounded-lg">
+                  <div ref={scrollReference} key={post.node.title} className="mx-1 w-full md:w-full lg:w-full border border-thirdthegray rounded-lg">
                     <PostBanner post={post.node} />
                   </div>
                 );
               }
               return (
-                <div key={post.node.title} className="w-full md:w-1/2 lg:w-trecol mb-4 border border-thirdthegray rounded-lg">
+                <div key={post.node.title} className="w-full md:w-1/2 lg:w-trecol mb-4 border border-thirdthegray rounded-lg h-fit">
                   <PostCard post={post.node} />
                 </div>
               );

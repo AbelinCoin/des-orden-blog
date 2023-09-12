@@ -19,15 +19,15 @@ const NewsletterBanner = () => {
       <div className="lg:w-1/2 lg:flex hidden rounded-l-2xl">
         <img className="h-full w-full object-cover rounded-l-2xl" src="/newletterimg.png" alt="banner" />
       </div>
-      <div className="lg:w-1/2 flex flex-col justify-around items-center p-6">
+      <div className="lg:w-1/2 flex flex-col justify-around items-center py-12 px-6">
         <div className="lg:mb-0 mb-2 flex flex-col items-center justify-center lg:justify-start lg:items-left text-center">
-          <div className="text-secondthegray text-2xl lg:text-4xl font-normal mb-4 md:px-8 px-4">Únete a nuestro newsletter y mantente informado con contenido exclusivo</div>
-          <div className="text-gray-500 w-full lg:text-xl mb-2 text-center pt-4">Forma parte de nuestro newsletter</div>
+          <div className="text-secondthegray text-2xl lg:text-3xl font-normal mb-4 md:px-8 px-4">Únete a nuestro newsletter y mantente informado con contenido exclusivo</div>
+          <div className="text-gray-500 w-full lg:text-xl text-xl py-4 mt-4 text-center">Forma parte de nuestro newsletter</div>
         </div>
         <div className="w-full flex flex-col justify-center items-center">
           <button
             type="button"
-            className="w-3/5 font-bold text-xl h-12 rounded-lg bg-gray-600 text-white px-4 py-1 hover:bg-thegray focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-4/6 font-bold text-2xl lg:h-14 h-12 rounded-lg bg-gray-600 text-white px-4 py-1 hover:bg-thegray focus:outline-none focus:ring-2 focus:ring-blue-500"
             onClick={openModal}
           >
             Suscribete

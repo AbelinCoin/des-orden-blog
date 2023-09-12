@@ -11,6 +11,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           {/* <meta name="viewport" content="width=device-width,minimum-scale=1, initial-scale=1" /> */}
+          <title>Óscar Doval</title>
           <link rel="icon" href="/logo.ico" sizes="any" />
         </Head>
         <body>

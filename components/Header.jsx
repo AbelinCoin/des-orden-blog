@@ -52,7 +52,7 @@ const Header = () => {
         <Link href="/">
           <a className="flex items-center cursor-pointer">
             <img src="/logo.png" alt="Logo" className="w-12 h-12 mr-2" />
-            <span className="font-bold text-2xl text-secondthegray">Des-orden</span>
+            <span className="text-2xl text-secondthegray">Des-orden</span>
           </a>
         </Link>
       </div>
@@ -126,10 +126,10 @@ const Header = () => {
             onChange={(e) => setSearchParam(e.target.value)}
             type="text"
             placeholder="Buscar"
-            className="searchInputHome border text-gray-400 bg-white py-2 pl-4 pr-12 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent"
+            className="searchInputHome border text-gray-400 bg-white py-2 pl-4 pr-12 rounded-lg focus:outline-none focus:ring-1 focus:thegray focus:border-transparent"
           />
           <div className="absolute inset-y-0 right-0 flex items-center mr-3 pointer-events-none">
-            <FontAwesomeIcon icon={faSearch} className="text-black" />
+            <FontAwesomeIcon icon={faSearch} className="text-secondthegray" />
           </div>
         </div>
       </div>

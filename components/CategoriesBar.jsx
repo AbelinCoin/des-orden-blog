@@ -21,7 +21,7 @@ const CategoriesBar = ({ setCategorySlug, setCurrentPage, classNames }) => {
 
   return (
     <div className={`${classNames} flex justify-center`}>
-      <div className="bg-white rounded-lg mb-8 border shadow-sm">
+      <div className="bg-white rounded-lg mb-8 shadow-md">
         <div className="flex flex-wrap gap-2 px-3 py-2 bg-white">
           <button
             type="button"

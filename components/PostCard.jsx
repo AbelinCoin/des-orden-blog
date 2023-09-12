@@ -7,11 +7,11 @@ import Link from 'next/link';
 /* import { grpahCMSImageLoader } from '../util'; */
 
 const PostCard = ({ post }) => (
-  <div className="h-2/4">
+  <div className="h-fit">
     <div className="relative overflow-hidden pb-80">
       <Image src={post.featuredImage.url} layout="fill" alt="" className="object-top absolute h-80 w-full object-cover rounded-t-lg" />
     </div>
-    <div className="flex flex-col h-full bg-white rounded-b-lg p-0 lg:p-6 md:p-6 pb-1 mb-8 h-600 px-4">
+    <div className="flex flex-col bg-white rounded-b-lg p-0 lg:p-6 md:p-6 pb-1 mb-2 px-4">
       <div className="mb-4 w-full">
         {/*       <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8 items-center">
         <Image
@@ -26,7 +26,7 @@ const PostCard = ({ post }) => (
         <p className="inline align-middle text-gray-700 ml-2 font-medium text-lg">{post.author.name}</p>
       </div> */}
         <div className="font-medium text-gray-700 flex flex-row justify-center lg:justify-start">
-          <div className="text-gray-700 font-normal flex lg:mr-2 my-4">
+          <div className="text-gray-700 font-normal flex lg:mr-2 my-3">
             <ul className="flex flex-wrap lg:mx-0 mx-2">
               {post.categories?.map((category) => (
                 <li key={category.slug} className="mr-1 mb-1 bg-black text-white rounded-sm px-2 py-1">
@@ -45,12 +45,12 @@ const PostCard = ({ post }) => (
           </div>
         </div>
       </div>
-      <div style={{ minHeight: '60px' }} className="mb-1 lg:text-left lg:items-left lg:justify-left text-center items-center justify-center px-4 mb-4">
+      <div style={{ minHeight: '40px' }} className="mb-3 lg:text-left lg:items-left lg:justify-left text-center items-center justify-center">
         <h1 className="mb-2transition duration-700 lg:text-left text-center cursor-pointer hover:text-thegray text-2xl font-normal lg:truncate">
           <Link href={`/post/${post.slug}`}>{post.title}</Link>
         </h1>
       </div>
-      <p style={{ minHeight: '100px' }} className="px-4 lg:text-left lg:items-left lg:justify-left text-center items-center justify-center text-md text-gray-700 font-normal my-4 text-ellipsis overflow-hidden">
+      <p style={{ minHeight: '70px' }} className="lg:text-left lg:items-left lg:justify-left text-center items-center justify-center text-lg text-gray-700 font-normal my-3 text-ellipsis overflow-hidden">
         {post.excerpt}
       </p>
       <div className="lg:text-left lg:items-left lg:justify-left text-center items-center justify-center flex-col justify-self-end">
