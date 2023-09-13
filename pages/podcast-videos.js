@@ -3,8 +3,8 @@ import { YoutubeGrid, Banner, NewsLetterBanner } from '../components';
 
 const Layout = () => {
   const bannerText = {
-    title: 'Nuestros Videos del canal',
-    subTitle: 'Blog dedicado al estudio de las finanzas, la economia y la politica. Un espacio donde hablaremos sobre pasión, poder y dinero en Venezuela y en toda la región. Temas y elementos que mueven al mundo.',
+    title: 'Desorden podcast - Oscar Doval',
+    subTitle: 'Un espacio donde hablaremos sobre pasión, poder y dinero en Venezuela y en toda la región. Temas y elementos que mueven al mundo.',
   };
 
   return (

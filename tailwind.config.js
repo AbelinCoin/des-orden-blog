@@ -13,6 +13,7 @@ module.exports = {
         secondthegray: '#525252',
         thirdthegray: '#808080',
         green1: '#00CB6A',
+        blackbanner: 'hsla(0, 0%, 7%, 0.85)',
       },
     },
     container: {

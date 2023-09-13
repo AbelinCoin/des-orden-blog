@@ -55,21 +55,21 @@ const SubscribeModal = () => {
   };
 
   return (
-    <div className="bg-red w-100 h-full">
-      <div className="flex flex-row md:flex-row md:h-full rounded-lg">
-        <form className="lg:w-1/2 w-full xl:px-12 lg:px-24 md:px-32 sm:px-32 px-8 py-8 flex flex-col justify-center rounded-lg" onSubmit={handleSubmit}>
+    <div className="bg-red w-100 h-full rounded-3xl">
+      <div className="rounded-3xl flex flex-row md:flex-row md:h-full">
+        <form className="rounded-lg lg:w-1/2 w-full xl:px-32 lg:px-24 md:px-32 sm:px-32 px-8 py-8 flex flex-col justify-center" onSubmit={handleSubmit}>
           <h1 className="text-2xl text-left w-full mb-4 font-weight-400 text-secondthegray">Suscríbete al Newsletter</h1>
-          <div className="mb-4">
+          <div className="mb-4 py-1">
             {/*             <label htmlFor="email" className="font-bold mr-2 text-gray-700">
               Correo electrónico:
             </label> */}
             <input
               type="email"
               name="email"
-              className="h-10 rounded-l-sm bg-white border border-gray-300 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-black-500 w-full"
+              className="h-12 rounded-lg bg-white border border-gray-300 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-black-500 w-full"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Email *"
+              placeholder="Correo electrónico *"
             />
           </div>
           <div className="flex flex-row">
@@ -80,7 +80,7 @@ const SubscribeModal = () => {
               <input
                 type="text"
                 name="firstName"
-                className="h-10 rounded-l-sm bg-white border border-gray-300 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-black-500 w-full"
+                className="h-12 rounded-lg bg-white border border-gray-300 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-black-500 w-full"
                 value={formData.firstName}
                 onChange={handleChange}
                 placeholder="Nombre *"
@@ -93,7 +93,7 @@ const SubscribeModal = () => {
               <input
                 type="text"
                 name="lastName"
-                className="h-10 rounded-l-none bg-white border border-gray-300 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-black-500 w-full"
+                className="h-12 rounded-lg bg-white border border-gray-300 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-black-500 w-full"
                 value={formData.lastName}
                 onChange={handleChange}
                 placeholder="Apellido *"
@@ -123,7 +123,7 @@ const SubscribeModal = () => {
           </button> */}
         </form>
         <div className="lg:w-1/2 lg:flex hidden">
-          <img className="h-full object-cover" src="/modalimg.png" alt="banner" />
+          <img className="h-full object-cover rounded-r-lg" src="/modalimg.png" alt="banner" />
         </div>
       </div>
     </div>

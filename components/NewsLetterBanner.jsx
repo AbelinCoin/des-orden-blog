@@ -35,12 +35,16 @@ const NewsletterBanner = () => {
         </div>
       </div>
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-80">
-          <div className="relative shadow-lg rounded-lg w-full h-1/2 bg-opacity-80 flex flex-row justify-center items-center">
+        <div className="fixed inset-0 flex items-center justify-center bg-blackbanner">
+          <div className="relative shadow-lg rounded-lg w-full h-1/2 flex flex-row justify-center items-center">
             <Modal
               isOpen
               onRequestClose={closeModal}
               className="Modal flex justify-start items-center"
+              style={{
+                overlay: { backgroundColor: 'transparent' },
+                content: { borderRadius: '10px' },
+              }}
             >
               <SubscribeModal closeModal={closeModal} />
             </Modal>

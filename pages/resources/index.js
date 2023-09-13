@@ -1,10 +1,8 @@
 import React from 'react';
 import { getLinksDownload } from '../../services';
-import { AssetsList, NewsLetterBanner/* , Pagination */ } from '../../components';
+import { AssetsList, NewsLetterBanner } from '../../components';
 
 function ResourcesPage({ linksDownload }) {
-  console.log(linksDownload);
-
   return (
     <div className="container mx-auto lg:px-32 px-2 mb-8">
       <div className="flex flex-col">
@@ -13,7 +11,6 @@ function ResourcesPage({ linksDownload }) {
           <h4 className="text-xl text-center py-3 text-secondthegray">Nuestros recursos especiales disponibles para su descarga</h4>
         </div>
         <AssetsList linksDownload={linksDownload} />
-        {/* <Pagination /> */}
         <NewsLetterBanner />
       </div>
     </div>

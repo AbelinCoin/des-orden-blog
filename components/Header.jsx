@@ -78,7 +78,10 @@ const Header = () => {
             <a className="text-black font-normal cursor-pointer mb-4">Sobre nosotros</a>
           </Link>
           <Link href="/contacto">
-            <a className="text-black font-normal cursor-pointer">Contacto</a>
+            <a className="text-black font-normal cursor-pointer mr-4 mb-4">Contacto</a>
+          </Link>
+          <Link href="/resources">
+            <a className="text-black font-normal cursor-pointer mr-4">Recursos</a>
           </Link>
         </div>
         <div className="absolute left-0 right-0 w-full py-4 px-4">
