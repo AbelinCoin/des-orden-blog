@@ -59,7 +59,7 @@ export default function Home({ posts }) {
       <Banner bannerText={bannerText} isSearch />
       <CategoriesBar setCategorySlug={setCategorySlug} setCurrentPage={setCurrentPage} />
       <div className="flex gap-4">
-        <div ref={scrollReference} className="flex flex-wrap w-full gap-3">
+        <div ref={scrollReference} className="flex flex-wrap w-full gap-3 justify-center">
           {currentPosts.length === 0 ? <NoDataToShow />
             : currentPosts.map((post) => (
               <div key={post.node.title} className="w-full md:w-1/2 lg:w-trecol mb-4 border border-thirdthegray rounded-lg">

@@ -27,9 +27,8 @@ const data = [
 
 const BoxGrid = () => (
   <div className="flex flex-col mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-32">
-    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 text-secondthegray">Nuestras empresas y propósito</h2>
-    <p className="mb-6 text-lg sm:text-xl text-secondthegray">Pertenecernos a varias empresas privadas que hacen vida en el mundo financiero y de consultoría empresarial y de entorno, nuestro propósito es ser una fuente de información fiable y crítica en temas económicos venezolanos y latinoamericanos.</p>
-
+    <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl mb-4 text-secondthegray">Nuestras empresas y propósito</h2>
+    <p className="mb-6 text-lg sm:text-lg text-secondthegray">Pertenecernos a varias empresas privadas que hacen vida en el mundo financiero y de consultoría empresarial y de entorno, nuestro propósito es ser una fuente de información fiable y crítica en temas económicos venezolanos y latinoamericanos.</p>
     <div className="flex flex-wrap justify-center sm:justify-between">
       {data.map((item) => (
         <div

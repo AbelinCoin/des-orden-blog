@@ -104,19 +104,19 @@ const Header = () => {
       {/* Desktop navigation */}
       <div className="hidden sm:flex items-center mb-4 sm:mb-0">
         <Link href="/blog">
-          <a className="text-black font-normal cursor-pointer mr-4">Artículos</a>
+          <a className="text-black font-normal cursor-pointer mx-2">Artículos</a>
         </Link>
         <Link href="/podcast-videos">
-          <a className="text-black font-normal cursor-pointer mr-4">Podcast</a>
+          <a className="text-black font-normal cursor-pointer mx-2">Podcast</a>
         </Link>
         <Link href="/sobre-nosotros">
-          <a className="text-black font-normal cursor-pointer mr-4">Sobre nosotros</a>
+          <a className="text-black font-normal cursor-pointer mx-2">Sobre nosotros</a>
         </Link>
         <Link href="/contacto">
-          <a className="text-black font-normal cursor-pointer mr-4">Contacto</a>
+          <a className="text-black font-normal cursor-pointer mx-2">Contacto</a>
         </Link>
         <Link href="/resources">
-          <a className="text-black font-normal cursor-pointer mr-4">Recursos</a>
+          <a className="text-black font-normal cursor-pointer mx-2">Recursos</a>
         </Link>
       </div>
 

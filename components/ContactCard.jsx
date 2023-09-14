@@ -10,22 +10,22 @@ const ContactCard = ({ picture, title, role, description }) => (
       className="w-44 h-44 mb-4 object-cover rounded-full"
     />
     <h3 className="text-xl font-semibold">{title}</h3>
-    <p className="text-gray-500 mb-2">{role}</p>
-    <p className="text-gray-700 text-center">{description}</p>
+    <p className="text-secondthegray text-center font-semibold mb-2">{role}</p>
+    <p className="text-secondthegray text-center font-semibold">{description}</p>
     <ul className="flex justify-center sm:justify-end text-black mt-4">
       <li className="mr-5">
         <a href="/">
-          <FontAwesomeIcon className="text-xl" icon={faFacebookF} />
+          <FontAwesomeIcon className="text-xl text-salmon" icon={faFacebookF} />
         </a>
       </li>
       <li className="mr-5">
         <a href="/">
-          <FontAwesomeIcon className="text-xl" icon={faInstagram} />
+          <FontAwesomeIcon className="text-xl text-salmon" icon={faInstagram} />
         </a>
       </li>
       <li className="mr-5">
         <a href="/">
-          <FontAwesomeIcon className="text-xl" icon={faTwitter} />
+          <FontAwesomeIcon className="text-xl text-salmon" icon={faTwitter} />
         </a>
       </li>
     </ul>

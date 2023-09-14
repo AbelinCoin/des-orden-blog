@@ -9,7 +9,6 @@ const Comments = ({ slug }) => {
 
   useEffect(() => {
     getComments(slug).then((result) => {
-      console.log("'---------------------------------------'");
       setComments(result);
     });
   }, []);
@@ -17,25 +16,24 @@ const Comments = ({ slug }) => {
   return (
     <>
       {comments.length > 0 && (
-        <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
-          <h3 className="text-xl mb-8 font-semibold border-b pb-4">
-            {comments.length}
+        <>
+          <h3 className="text-3xl mb-8 text-secondthegray border-b pb-4">
+            {/* {comments.length} */}
             {' '}
-            {comments.length > 1 ? 'Comentarios' : 'Comentario'}
+            {comments.length > 1 ? 'Comentarios mas recientes:' : 'Comentarios mas recientes:'}
           </h3>
+          <div className="bg-white border border-gray-300 rounded-lg p-8 pb-12 mb-8">
             {comments.map((comment, index) => (
               <div key={index} className="border-b border-gray-100 mb-4 pb-4">
-                <p className="mb-4">
-                  <span className="font-semibold">{comment.name}</span>
-                  {' '}
-                  on
-                  {' '}
-                  {moment(comment.createdAt).format('MMM DD, YYYY')}
+                <p className="mb-4 flex flex-col">
+                  <span className="text-secondthegray font-bold">{comment.name}</span>
+                  <span className="text-secondthegray">{moment(comment.createdAt).format('MMM DD, YYYY')}</span>
                 </p>
                 <p className="whitespace-pre-line text-gray-600 w-full">{parse(comment.comment)}</p>
               </div>
             ))}
-        </div>
+          </div>
+        </>
       )}
     </>
   );

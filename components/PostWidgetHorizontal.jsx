@@ -21,8 +21,11 @@ const PostWidgetHorizontal = ({ categories, slug }) => {
   return (
     <div className="rounded-lg lg:p-8 p-2 pb-12 mb-8">
       <div className="mb-4 flex flex-row items-center justify-between">
-        <h3 className="mb-2 md:text-2xl text-xl font-semibold">{slug ? 'Artículos relacionados' : 'Artículos recientes'}</h3>
-        <p className="mb-2 transition cursor-pointer hover:text-thegray font-normal border-b md:text-xl text-md">
+        <div>
+          <h3 className="text-secondthegray mb-2 md:text-3xl text-xl">{slug ? 'Artículos relacionados' : 'Artículos recientes'}</h3>
+          <h5 className="text-secondthegray mb-2 md:text-lg text-sm">Nuestros articulos mas recientes y rateados</h5>
+        </div>
+        <p className="mb-2 transition cursor-pointer hover:text-thegray font-normal md:border-b md:text-xl text-md text-right">
           <Link href="/blog">Ver todos los artículos</Link>
         </p>
       </div>

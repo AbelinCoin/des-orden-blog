@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
 import { submitComment } from '../services';
 
@@ -76,18 +77,31 @@ const CommentsForm = ({ slug }) => {
 
   return (
     <div className="rounded-lg p-8 pb-12 mb-8">
-      <h3 className="text-gray-800 text-xl font-semibold pb-4">Deja un comentario</h3>
-      <p className="text-gray-400">Tus datos no serán publicados</p>
+      <h3 className="text-secondthegray text-3xl pb-2">Deja un comentario</h3>
+      <p className="text-secondthegray">Tu dirección de correo electrónico será requerida pero no publicada*</p>
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea value={formData.comment} onChange={onInputChange} className="p-4 outline-none w-full rounded-lg h-40 focus:ring-2 focus:ring-gray-200 bg-white-100 border text-gray-700" name="comment" placeholder="Comentario" />
       </div>
       <div className="flex lg:flex-row mb-4 flex-col justify-between">
         <div className="flex flex-row w-full lg:w-3/4 mb-4">
           <input type="text" value={formData.name} onChange={onInputChange} className="mr-2 py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 border bg-white-100 text-gray-700" placeholder="Nombre*" name="name" />
-          <input type="email" value={formData.email} onChange={onInputChange} className="mr-2 py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 border bg-white-100 text-gray-700" placeholder="Email*" name="email" />
+          <input
+            type="email"
+            value={formData.email}
+            onChange={onInputChange}
+            className="mr-2 py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 border bg-white-100 text-gray-700"
+            placeholder="Correo electrónico*"
+            name="email"
+          />
         </div>
         <div className="flex lg:justify-end justify-center w-full lg:w-1/3">
-          <button type="button" onClick={handlePostSubmission} className="lg:w-1/2 w-1/2 transition duration-500 ease hover:bg-indigo-900 inline-block bg-thegray text-sm font-medium rounded-md text-white px-6 py-3 cursor-pointer">Comentar</button>
+          <button
+            type="button"
+            onClick={handlePostSubmission}
+            className="lg:w-1/2 w-1/2 transition h-3/4 duration-500 ease hover:bg-salmon inline-block bg-thegray text-md font-medium rounded-md text-white px-6 py-1 cursor-pointer"
+          >
+            Comentar
+          </button>
         </div>
       </div>
       {showSuccessMessage && <span className="text-xl float-right font-semibold mt-3 text-green-500">Comentario enviado para revisión</span>}

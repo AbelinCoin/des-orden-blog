@@ -20,9 +20,9 @@ const CategoriesBar = ({ setCategorySlug, setCurrentPage, classNames }) => {
   };
 
   return (
-    <div className={`${classNames} flex justify-center`}>
-      <div className="bg-white rounded-lg mb-8 shadow-md">
-        <div className="flex flex-wrap gap-2 px-3 py-2 bg-white">
+    <div className={`${classNames} flex justify-center pb-7`}>
+      <div className="bg-white rounded-lg md:mb-10 shadow-md drop-shadow-2xl">
+        <div className="flex flex-wrap gap-2 px-3 py-2 bg-white justify-center">
           <button
             type="button"
             key="view-all"
