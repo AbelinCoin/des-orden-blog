@@ -8,7 +8,7 @@ const PostBanner = ({ post }) => (
   <div className="flex flex-col xl:flex-row lg:flex-row sm:flex-col">
     <div className="relative overflow-hidden lg:w-7/12 md:w-full h-100 p-40">
       <Image
-        className="lg:rounded-l-lg lg:rounded-tr-none md:rounded-t-lg"
+        className="lg:rounded-l-lg lg:rounded-tr-none md:rounded-t-lg rounded-t-lg"
         src={post.featuredImage.url}
         layout="fill"
         alt=""
