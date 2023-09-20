@@ -54,6 +54,20 @@ export const getCategories = async () => {
 
   return result.categories;
 };
+export const getResourceCategories = async () => {
+  const query = gql`
+    query GetResourceGategories {
+      resourceCategories {
+          name
+          slug
+        }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query);
+
+  return result.resourceCategories;
+};
 export const getLinksDownload = async () => {
   const query = gql`
     query getLinksDownloads {
@@ -69,6 +83,10 @@ export const getLinksDownload = async () => {
         }
         image {
           url
+        }
+        resourceCategories {
+          name
+          slug
         }
       }
     }
