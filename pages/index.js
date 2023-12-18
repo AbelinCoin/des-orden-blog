@@ -1,4 +1,7 @@
 /* eslint-disable max-len */
+
+'use client';
+
 import { useEffect, useState, useLayoutEffect, useRef } from 'react';
 import { usePostStore } from '../stores/globalStore';
 import { PostCard, PostBanner, /* Categories, PostWidget, */ BannerWithImage, CategoriesBar, Pagination, TwoColumns, TweetsCarousel } from '../components';

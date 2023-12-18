@@ -61,34 +61,32 @@ const YoutubeGrid = () => {
     setCurrentPage(pageNumber);
   };
 
-  useEffect(() => {
-    const fetchVideos = async () => {
-      try {
-        const response = await axios.get(
-          'https://www.googleapis.com/youtube/v3/search',
-          {
-            params: {
-              key: process.env.NEXT_PUBLIC_YT_KEY,
-              part: 'snippet',
-              order: 'date',
-              channelId: process.env.NEXT_PUBLIC_CHANNEL_ID,
-              maxResults: 100,
-            },
+  const fetchVideos = async () => {
+    try {
+      const response = await axios.get(
+        'https://www.googleapis.com/youtube/v3/search',
+        {
+          params: {
+            key: process.env.NEXT_PUBLIC_YT_KEY,
+            part: 'snippet',
+            order: 'date',
+            channelId: process.env.NEXT_PUBLIC_CHANNEL_ID,
+            maxResults: 100,
           },
-        );
+        },
+      );
 
-        setVideos(response.data.items.filter((video) => video.id.kind !== 'youtube#playlist'));
-        let seasonsData = [];
-        seasonsData = response.data.items.filter((video) => video.id.kind === 'youtube#playlist');
-        setSeasons(seasonsData);
-        console.log(response.data.items.filter((video) => video.id.kind === 'youtube#playlist'));
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.error('Error fetching videos:', error);
-        setErrorLoading(true);
-      }
-    };
-
+      setVideos(response.data.items.filter((video) => video.id.kind !== 'youtube#playlist'));
+      let seasonsData = [];
+      seasonsData = response.data.items.filter((video) => video.id.kind === 'youtube#playlist');
+      setSeasons(seasonsData);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error('Error fetching videos:', error);
+      setErrorLoading(true);
+    }
+  };
+  useEffect(() => {
     fetchVideos();
   }, []);
 

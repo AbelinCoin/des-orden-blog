@@ -26,7 +26,7 @@ const PostWidgetHorizontal = ({ categories, slug }) => {
           <h5 className="text-secondthegray mb-2 md:text-lg text-sm">Nuestros articulos mas recientes y rateados</h5>
         </div>
         <p className="mb-2 transition cursor-pointer hover:text-thegray font-normal md:border-b md:text-xl text-md text-right">
-          <Link href="/blog">Ver todos los artículos</Link>
+          <Link legacyBehavior href="/blog">Ver todos los artículos</Link>
         </p>
       </div>
 

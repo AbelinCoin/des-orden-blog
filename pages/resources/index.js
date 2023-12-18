@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { getLinksDownload } from '../../services';
 import { AssetsList, NewsLetterBanner, CategoriesBar } from '../../components';
 
-function ResourcesPage({ linksDownload }) {
-  console.log(linksDownload);
+import { useUser } from "@clerk/nextjs";
+
+function ResourcesPage({ linksDownload, privateMetadata }) {
   const [categorySlug, setCategorySlug] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -19,6 +23,30 @@ function ResourcesPage({ linksDownload }) {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentLinks = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const { isSignedIn, user, isLoaded } = useUser();
+
+  useEffect(() => {
+    console.log({ isSignedIn, user, isLoaded });
+
+
+    const fetchData = async (id) => {
+      try {
+        const res = await axios.get(
+          '/api/private', {
+          body: {
+              id
+          }
+        });
+        console.log(res, "=============================");
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    if (isLoaded) {
+      fetchData(user.id);
+    }
+  });
 
   return (
     <div className="container mx-auto lg:px-32 px-2 mb-8">
@@ -39,9 +67,12 @@ export default ResourcesPage;
 
 export async function getServerSideProps() {
   const linksDownload = await getLinksDownload();
+
+  // const privateMetadata = await fetch('/api/private');
   return {
     props: {
       linksDownload,
+      // privateMetadata,
     },
   };
 }

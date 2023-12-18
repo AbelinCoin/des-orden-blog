@@ -1,13 +1,9 @@
 /* eslint-disable max-len */
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ContactCard, NewsLetterBanner, Companies } from '../components';
 import { getAuthors, getPosts } from '../services';
 
-function SobreNosotros({ authors }) {
-  useEffect(() => {
-    console.log(authors);
-  });
-
+function SobreNosotros() {
   const contacts = [
     {
       id: 1,

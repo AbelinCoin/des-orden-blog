@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { PostCard, /* Categories, PostWidget, */ Banner, CategoriesBar, Pagination } from '../../components';
 import { getPosts } from '../../services';

@@ -1,4 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Link from 'next/link';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -11,8 +13,9 @@ class MyDocument extends Document {
       <Html>
         <Head>
           {/* <meta name="viewport" content="width=device-width,minimum-scale=1, initial-scale=1" /> */}
-          <title>Óscar Doval</title>
-          <link rel="icon" href="/logo.ico" sizes="any" />
+          <Link legacyBehavior rel="icon" href="/logo.ico" sizes="any">
+            <a>.</a>
+          </Link>
         </Head>
         <body>
           <Main />

@@ -30,7 +30,7 @@ const PostCard = ({ post }) => (
             <ul className="flex flex-wrap lg:mx-0 mx-2">
               {post.categories?.map((category) => (
                 <li key={category.slug} className="mr-1 mb-1 bg-black text-white rounded-sm px-2 py-1">
-                  <Link href={`/category/${category.slug}`}>
+                  <Link legacyBehavior href={`/category/${category.slug}`}>
                     <a>{category.name}</a>
                   </Link>
                 </li>
@@ -47,14 +47,14 @@ const PostCard = ({ post }) => (
       </div>
       <div style={{ minHeight: '40px' }} className="mb-3 lg:text-left lg:items-left lg:justify-left text-center items-center justify-center">
         <h1 className="mb-2transition duration-700 lg:text-left text-center cursor-pointer hover:text-thegray text-2xl font-normal lg:truncate">
-          <Link href={`/post/${post.slug}`}>{post.title}</Link>
+          <Link legacyBehavior href={`/post/${post.slug}`}>{post.title}</Link>
         </h1>
       </div>
       <p style={{ minHeight: '70px' }} className="lg:text-left lg:items-left lg:justify-left text-center items-center justify-center text-lg text-gray-700 font-normal my-3 text-ellipsis overflow-hidden">
         {post.excerpt}
       </p>
       <div className="lg:text-left lg:items-left lg:justify-left text-center items-center justify-center flex-col justify-self-end">
-        <Link href={`/post/${post.slug}`}>
+        <Link legacyBehavior href={`/post/${post.slug}`}>
           <span className="transition duration-500 ease transform hover:-translate-y-1 inline-block bg-white text-black border border-black text-lg font-medium rounded-md w-4/3 px-8 py-3 cursor-pointer">{'Leer más  >' }</span>
         </Link>
       </div>

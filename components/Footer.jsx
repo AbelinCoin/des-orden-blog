@@ -7,7 +7,7 @@ const Footer = () => (
   <footer className="bg-thegray">
     <div className="container mx-auto py-12 px-8 sm:px-24 flex md:flex-row flex-col justify-between sm:flex-row lg:border-b boder-white items-center h-44 mb-4">
       <div className="flex-grow sm:flex-grow-0 flex justify-center sm:justify-start mb-4 sm:mb-0">
-        <Link href="/">
+        <Link legacyBehavior href="/">
           <div className="flex cursor-pointer items-center">
             {/*             <Image width={100} height={100} src="/logoBlog.png" alt="Logo" /> */}
             <span className="font-bold text-2xl text-white">Des-orden</span>

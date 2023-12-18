@@ -94,7 +94,6 @@ const getCryptoData = async () => {
 const getStockData = async (symbol) => {
   const apiKey = process.env.MARKETS_SH_API_KEY;
   const url = `https://markets.sh/api/v1/symbols/${symbol}?api_token=${apiKey}`;
-  // const url = 'https://markets.sh/api/v1/symbols/NASDAQ:AAPL?api_token=e6efd9c09c6c6d41c2d45357d6c972a8';
 
   try {
     const response = await axios.get(url);
@@ -126,12 +125,12 @@ export default async function handler(req, res) {
     console.error(error);
     errArray.push('Error fetching data from CoinMarketCap API');
   }
-  try {
-    tableData.stocks = await getStocksData(['^IXIC', '^DJI', '^GSPC', '^BVSP', '^GDAXI', '^FTSE', '^FCHI', '^IBEX', 'NYSE:FEZ', '^MERV', '^N225', '^MXX']);
-  } catch (error) {
-    console.error(error);
-    errArray.push('Error fetching data from markets sh API');
-  }
+  // try {
+  //   tableData.stocks = await getStocksData(['^IXIC', '^DJI', '^GSPC', '^BVSP', '^GDAXI', '^FTSE', '^FCHI', '^IBEX', 'NYSE:FEZ', '^MERV', '^N225', '^MXX']);
+  // } catch (error) {
+  //   console.error(error);
+  //   errArray.push('Error fetching data from markets sh API');
+  // }
   try {
     tableData.bolsaDeValores = await getBolsaDeValoresData();
   } catch (error) {

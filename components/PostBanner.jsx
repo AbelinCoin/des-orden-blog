@@ -20,7 +20,7 @@ const PostBanner = ({ post }) => (
           <ul className="flex lg:justify-left flex-wrap">
             {post.categories.map((category) => (
               <li key={category.slug} className="mr-2 my-1 bg-black text-white rounded-sm px-2 py-1">
-                <Link href={`/category/${category.slug}`}>
+                <Link legacyBehavior href={`/category/${category.slug}`}>
                   <a>{category.name}</a>
                 </Link>
               </li>
@@ -37,13 +37,13 @@ const PostBanner = ({ post }) => (
         </div>
       </div>
       <h1 className="transition duration-700 lg:text-left text-center mb-4 cursor-pointer hover:text-pink-600 text-3xl font-normal">
-        <Link href={`/post/${post.slug}`}>{post.title}</Link>
+        <Link legacyBehavior href={`/post/${post.slug}`}>{post.title}</Link>
       </h1>
       <p className="lg:text-left text-center text-lg text-gray-700 font-normal mb-8 ">
         {post.excerpt}
       </p>
       <div className="text-left flex lg:justify-start md:justify-left justify-center">
-        <Link href={`/post/${post.slug}`}>
+        <Link legacyBehavior href={`/post/${post.slug}`}>
           <span className="md:justify-center transition duration-500 border-black ease transform hover:-translate-y-1 bg-white text-black border text-lg font-medium rounded-md w-4/3 px-8 py-3 cursor-pointer">Leer más</span>
         </Link>
       </div>

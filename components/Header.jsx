@@ -1,9 +1,11 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBars, faX } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { UserButton } from '@clerk/nextjs';
 import { usePostStore } from '../stores/globalStore';
 import { searchPostSByTitle } from '../services';
 
@@ -37,10 +39,13 @@ const Header = () => {
     }
   };
 
-  useEffect(async () => {
+  useEffect(() => {
     if (router.query.query !== undefined) {
-      const searchedPosts = (await searchPostSByTitle(router.query.query)) || [];
-      updatePosts(constructArray(searchedPosts));
+      searchPostSByTitle(router.query.query).then((res) => {
+        updatePosts(constructArray(res));
+      }).catch(() => {
+        updatePosts(constructArray([]));
+      });
       setSearchParam('');
       if (isSidebarOpen) setIsSidebarOpen(!isSidebarOpen);
     }
@@ -49,7 +54,7 @@ const Header = () => {
   return (
     <div className="container mx-auto px-4 sm:px-10 mb-4 pt-3 flex flex-wrap items-center justify-between">
       <div className="flex items-center mb-4 sm:mb-0">
-        <Link href="/">
+        <Link legacyBehavior href="/">
           <a className="flex items-center cursor-pointer">
             <img src="/logo.png" alt="Logo" className="w-12 h-12 mr-2" />
             <span className="text-2xl text-secondthegray">Des-orden</span>
@@ -60,7 +65,7 @@ const Header = () => {
       {/* Mobile sidebar */}
       <div className={`fixed top-0 right-0 h-full bg-white z-10 transition-transform duration-300 transform ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} sm:hidden w-3/4 max-w-xs`}>
         <div className="flex justify-between items-center mt-4 mx-4">
-          <Link href="/">
+          <Link legacyBehavior href="/">
             <a className="flex items-center cursor-pointer">
               <img src="/logo.png" alt="Logo" className="w-12 h-12 mr-2" />
             </a>
@@ -68,19 +73,19 @@ const Header = () => {
           <FontAwesomeIcon icon={faX} className="text-black cursor-pointer text-2xl" onClick={toggleSidebar} />
         </div>
         <div className="flex flex-col items-left mt-8 ml-4 mb-8">
-          <Link href="/blog">
+          <Link legacyBehavior href="/blog">
             <a className="text-black font-normal cursor-pointer mb-4">Artículos</a>
           </Link>
-          <Link href="/podcast-videos">
+          <Link legacyBehavior href="/podcast-videos">
             <a className="text-black font-normal cursor-pointer mb-4">Podcast</a>
           </Link>
-          <Link href="/sobre-nosotros">
+          <Link legacyBehavior href="/sobre-nosotros">
             <a className="text-black font-normal cursor-pointer mb-4">Sobre nosotros</a>
           </Link>
-          <Link href="/contacto">
+          <Link legacyBehavior href="/contacto">
             <a className="text-black font-normal cursor-pointer mr-4 mb-4">Contacto</a>
           </Link>
-          <Link href="/resources">
+          <Link legacyBehavior href="/resources">
             <a className="text-black font-normal cursor-pointer mr-4">Recursos</a>
           </Link>
         </div>
@@ -103,21 +108,22 @@ const Header = () => {
 
       {/* Desktop navigation */}
       <div className="hidden sm:flex items-center mb-4 sm:mb-0">
-        <Link href="/blog">
+        <Link legacyBehavior href="/blog">
           <a className="text-black font-normal cursor-pointer mx-2">Artículos</a>
         </Link>
-        <Link href="/podcast-videos">
+        <Link legacyBehavior href="/podcast-videos">
           <a className="text-black font-normal cursor-pointer mx-2">Podcast</a>
         </Link>
-        <Link href="/sobre-nosotros">
+        <Link legacyBehavior href="/sobre-nosotros">
           <a className="text-black font-normal cursor-pointer mx-2">Sobre nosotros</a>
         </Link>
-        <Link href="/contacto">
+        <Link legacyBehavior href="/contacto">
           <a className="text-black font-normal cursor-pointer mx-2">Contacto</a>
         </Link>
-        <Link href="/resources">
+        <Link legacyBehavior href="/resources">
           <a className="text-black font-normal cursor-pointer mx-2">Recursos</a>
         </Link>
+        <UserButton afterSignOutUrl="/" />
       </div>
 
       {/* Search input */}
