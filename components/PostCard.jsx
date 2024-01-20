@@ -31,7 +31,7 @@ const PostCard = ({ post }) => (
               {post.categories?.map((category) => (
                 <li key={category.slug} className="mr-1 mb-1 bg-black text-white rounded-sm px-2 py-1">
                   <Link href={`/category/${category.slug}`}>
-                    <a>{category.name}</a>
+                    <p>{category.name}</p>
                   </Link>
                 </li>
               ))}

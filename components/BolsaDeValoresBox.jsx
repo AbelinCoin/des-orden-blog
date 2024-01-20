@@ -19,7 +19,7 @@ const BolsaDeValoresBox = ({ bolsaDeValoresData, loading }) => {
   }
 
   const BCVData = bolsaDeValoresData.filter((stock) => stock?.COD_SIMB === 'BVCC')[0];
-  const isPositive1hBCV = parseFloat(BCVData.ULT_VAR_REL) >= 0;
+  const isPositive1hBCV = parseFloat(BCVData?.ULT_VAR_REL) >= 0;
 
   return (
     <div className="bg-white w-full rounded-lg py-4 px-8 h-full flex flex-col justify-center">
@@ -34,14 +34,14 @@ const BolsaDeValoresBox = ({ bolsaDeValoresData, loading }) => {
               /> */}
         </div>
         <div className="flex-1 flex-col">
-          <div className="flex font-extrabold">{BCVData.COD_SIMB}</div>
-          <div className="flex"><strong>{'Volumen: '}</strong>{BCVData.VOLUMEN}</div>
+          <div className="flex font-extrabold">{BCVData?.COD_SIMB}</div>
+          <div className="flex"><strong>{'Volumen: '}</strong>{BCVData?.VOLUMEN}</div>
         </div>
         <div className="text-sm flex flex-col items-end">
           <span
             className={`mr-1 font-extrabold text-xl ${' '}`}
           >
-            {parseFloat(BCVData.PRECIO_ULT).toFixed(2)}
+            {parseFloat(BCVData?.PRECIO_ULT).toFixed(2)}
           </span>
           <span
             className={`${isPositive1hBCV ? 'bg-green1' : 'bg-red-500'} flex px-8 justify-center items-center text-white font-bold rounded-lg text-center w-1/2 px-2`}
@@ -52,7 +52,7 @@ const BolsaDeValoresBox = ({ bolsaDeValoresData, loading }) => {
             {!isPositive1hBCV
               ? <FontAwesomeIcon icon={faArrowDown} className="text-white mx-1" />
               : <></>}
-            {` ${parseFloat(BCVData.ULT_VAR_REL).toFixed(2)}`}%
+            {` ${parseFloat(BCVData?.ULT_VAR_REL).toFixed(2)}`}%
           </span>
         </div>
       </div>
@@ -90,7 +90,7 @@ const BolsaDeValoresBox = ({ bolsaDeValoresData, loading }) => {
                   {!isPositive1h
                     ? <FontAwesomeIcon icon={faArrowDown} className="text-white mx-1" />
                     : <></>}
-                  {` ${parseFloat(stock.PORC_DIF_CIE).toFixed(2)}`}%
+                  {` ${parseFloat(stock?.PORC_DIF_CIE).toFixed(2)}`}%
                 </span>
               </div>
             </div>

@@ -17,9 +17,9 @@ const TwoColumnImageAndText = ({ image, title, description, reverse, url, button
           {
           url && (
           <Link className="w-full" href={url}>
-            <a className="lg:w-1/2 w-full font-bold bg-secondthegray px-5 py-3 rounded-lg text-white hover:bg-red-500 transition-colors">
+            <p className="lg:w-1/2 w-full font-bold bg-secondthegray px-5 py-3 rounded-lg text-white hover:bg-red-500 transition-colors">
               {buttonText}
-            </a>
+            </p>
           </Link>
           )
         }

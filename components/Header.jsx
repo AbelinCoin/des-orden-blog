@@ -37,23 +37,27 @@ const Header = () => {
     }
   };
 
-  useEffect(async () => {
-    if (router.query.query !== undefined) {
-      const searchedPosts = (await searchPostSByTitle(router.query.query)) || [];
-      updatePosts(constructArray(searchedPosts));
-      setSearchParam('');
-      if (isSidebarOpen) setIsSidebarOpen(!isSidebarOpen);
-    }
+  useEffect(() => {
+    // useEffect(async () => {
+    const queryFunc = async () => {
+      if (router.query.query !== undefined) {
+        const searchedPosts = (await searchPostSByTitle(router.query.query)) || [];
+        updatePosts(constructArray(searchedPosts));
+        setSearchParam('');
+        if (isSidebarOpen) setIsSidebarOpen(!isSidebarOpen);
+      }
+    };
+    queryFunc();
   }, [router.query.query]);
 
   return (
     <div className="container mx-auto px-4 sm:px-10 mb-4 pt-3 flex flex-wrap items-center justify-between">
       <div className="flex items-center mb-4 sm:mb-0">
         <Link href="/">
-          <a className="flex items-center cursor-pointer">
+          <p className="flex items-center cursor-pointer">
             <img src="/logo.png" alt="Logo" className="w-12 h-12 mr-2" />
             <span className="text-2xl text-secondthegray">Des-orden</span>
-          </a>
+          </p>
         </Link>
       </div>
 
@@ -61,27 +65,27 @@ const Header = () => {
       <div className={`fixed top-0 right-0 h-full bg-white z-10 transition-transform duration-300 transform ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} sm:hidden w-3/4 max-w-xs`}>
         <div className="flex justify-between items-center mt-4 mx-4">
           <Link href="/">
-            <a className="flex items-center cursor-pointer">
+            <p className="flex items-center cursor-pointer">
               <img src="/logo.png" alt="Logo" className="w-12 h-12 mr-2" />
-            </a>
+            </p>
           </Link>
           <FontAwesomeIcon icon={faX} className="text-black cursor-pointer text-2xl" onClick={toggleSidebar} />
         </div>
         <div className="flex flex-col items-left mt-8 ml-4 mb-8">
           <Link href="/blog">
-            <a className="text-black font-normal cursor-pointer mb-4">Artículos</a>
+            <p className="text-black font-normal cursor-pointer mb-4">Artículos</p>
           </Link>
           <Link href="/podcast-videos">
-            <a className="text-black font-normal cursor-pointer mb-4">Podcast</a>
+            <p className="text-black font-normal cursor-pointer mb-4">Podcast</p>
           </Link>
           <Link href="/sobre-nosotros">
-            <a className="text-black font-normal cursor-pointer mb-4">Sobre nosotros</a>
+            <p className="text-black font-normal cursor-pointer mb-4">Sobre nosotros</p>
           </Link>
           <Link href="/contacto">
-            <a className="text-black font-normal cursor-pointer mr-4 mb-4">Contacto</a>
+            <p className="text-black font-normal cursor-pointer mr-4 mb-4">Contacto</p>
           </Link>
           <Link href="/resources">
-            <a className="text-black font-normal cursor-pointer mr-4">Recursos</a>
+            <p className="text-black font-normal cursor-pointer mr-4">Recursos</p>
           </Link>
         </div>
         <div className="absolute left-0 right-0 w-full py-4 px-4">
@@ -104,19 +108,19 @@ const Header = () => {
       {/* Desktop navigation */}
       <div className="hidden sm:flex items-center mb-4 sm:mb-0">
         <Link href="/blog">
-          <a className="text-black font-normal cursor-pointer mx-2">Artículos</a>
+          <p className="text-black font-normal cursor-pointer mx-2">Artículos</p>
         </Link>
         <Link href="/podcast-videos">
-          <a className="text-black font-normal cursor-pointer mx-2">Podcast</a>
+          <p className="text-black font-normal cursor-pointer mx-2">Podcast</p>
         </Link>
         <Link href="/sobre-nosotros">
-          <a className="text-black font-normal cursor-pointer mx-2">Sobre nosotros</a>
+          <p className="text-black font-normal cursor-pointer mx-2">Sobre nosotros</p>
         </Link>
         <Link href="/contacto">
-          <a className="text-black font-normal cursor-pointer mx-2">Contacto</a>
+          <p className="text-black font-normal cursor-pointer mx-2">Contacto</p>
         </Link>
         <Link href="/resources">
-          <a className="text-black font-normal cursor-pointer mx-2">Recursos</a>
+          <p className="text-black font-normal cursor-pointer mx-2">Recursos</p>
         </Link>
       </div>
 

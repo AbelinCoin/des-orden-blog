@@ -3,7 +3,6 @@ import { getLinksDownload } from '../../services';
 import { AssetsList, NewsLetterBanner, CategoriesBar } from '../../components';
 
 function ResourcesPage({ linksDownload }) {
-  console.log(linksDownload);
   const [categorySlug, setCategorySlug] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
 

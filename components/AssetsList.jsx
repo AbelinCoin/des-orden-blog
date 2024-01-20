@@ -29,8 +29,9 @@ function AssetsList({ linksDownload }) {
       <Image
         className="object-top absolute h-80 w-full object-cover rounded-t-lg"
         src={linkData?.image?.url}
-        width={500}
-        height={250}
+        // width={500}
+        // height={250}
+        fill
         /*         layout="fill" */
         alt={linkData.asset.mimeType}
       />
@@ -49,9 +50,15 @@ function AssetsList({ linksDownload }) {
   return (
     <>
       <div className="flex flex-col md:flex-row gap-x-5">
-        {currentPosts.map((linkData, index) => (
+        {
+        currentPosts.length > 0 ? currentPosts.map((linkData, index) => (
           <AssetCard keyData={index + linkData.id} linkData={linkData} />
-        ))}
+        )) : (
+          <div className="flex items-center justify-center w-trecol mx-auto border border-gray rounded-lg h-40">
+            No Hay Recursos Disponibles
+          </div>
+        )
+      }
       </div>
       <Pagination
         handlePageChange={handlePageChange}
