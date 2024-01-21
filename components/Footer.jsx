@@ -38,12 +38,22 @@ const Footer = () => (
             </a>
           </li> */}
           <li className="mr-5">
-            <a target="_blank" href="https://instagram.com/oscardovalve?igshid=Y2I2MzMwZWM3ZA==" rel="noreferrer">
+            <a
+              target="_blank"
+              href="https://instagram.com/oscardovalve?igshid=Y2I2MzMwZWM3ZA=="
+              rel="noreferrer"
+              aria-label="instagram"
+            >
               <FontAwesomeIcon className="text-2xl" icon={faInstagram} />
             </a>
           </li>
           <li className="mr-5">
-            <a target="_blank" href="https://twitter.com/oscardovalve?s=21&t=OhnkCcR0ZqITGcPXLu1Pfg" rel="noreferrer">
+            <a
+              target="_blank"
+              href="https://twitter.com/oscardovalve?s=21&t=OhnkCcR0ZqITGcPXLu1Pfg"
+              rel="noreferrer"
+              aria-label="twitter"
+            >
               <FontAwesomeIcon className="text-2xl" icon={faTwitter} />
             </a>
           </li>

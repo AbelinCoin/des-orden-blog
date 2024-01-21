@@ -14,17 +14,17 @@ const ContactCard = ({ picture, title, role, description }) => (
     <p className="text-secondthegray text-center font-semibold">{description}</p>
     <ul className="flex justify-center sm:justify-end text-black mt-4">
       <li className="mr-5">
-        <a href="/">
+        <a href="/" id="facebook" name="facebook" aria-label="facebook">
           <FontAwesomeIcon className="text-xl text-salmon" icon={faFacebookF} />
         </a>
       </li>
       <li className="mr-5">
-        <a href="/">
+        <a href="/" aria-label="instagram">
           <FontAwesomeIcon className="text-xl text-salmon" icon={faInstagram} />
         </a>
       </li>
       <li className="mr-5">
-        <a href="/">
+        <a href="/" aria-label="twitter">
           <FontAwesomeIcon className="text-xl text-salmon" icon={faTwitter} />
         </a>
       </li>
