@@ -30,9 +30,9 @@ function AssetsList({ linksDownload, permissions }) {
 
   const AssetCard = ({ linkData, keyData }) => (
     <div key={keyData} className="h-96 relative flex flex-col items-center justify-between w-full md:w-1/2 lg:w-trecol mb-6 border border-gray rounded-lg">
-      <div className="relative w-full h-full bg-red-500">
+      <div className="relative w-full h-full">
         <Image
-          className="object-top w-full object-cover rounded-t-lg z-1"
+          className="object-top w-full object-cover rounded-t-lg z-1 before:block before:bg-red-500 before:w-full before:h-full"
           src={linkData?.image?.url}
         // width={500}
         // height={250}
@@ -59,7 +59,7 @@ function AssetsList({ linksDownload, permissions }) {
           disabled={!hasPermissionToDowload}
           type="button"
           className={
-          `transition duration-500 ease transform hover:-translate-y-1 inline-block bg-white text-black border border-black text-md font-medium rounded-sm w-4/3 px-6 py-2 ${hasPermissionToDowload ? 'cursor-pointer' : 'cursor-not-allowed'} mb-2 mt-4`
+          `transition duration-500 ease transform hover:-translate-y-1 inline-block bg-white text-black border border-black text-md font-medium rounded-sm w-4/3 px-6 py-2 ${hasPermissionToDowload ? 'cursor-pointer' : 'cursor-not-allowed'} my-4`
         }
           onClick={() => linkRef.current.click()}
         >
