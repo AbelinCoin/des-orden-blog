@@ -4,17 +4,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Circles } from 'react-loader-spinner';
 
 const BolsaDeValoresBox = ({ bolsaDeValoresData, loading }) => {
+  console.log('bolsa de valores', bolsaDeValoresData);
+  console.log('loading', loading);
   if (loading || bolsaDeValoresData === null) {
     return (
-      <Circles
-        height="80"
-        width="80"
-        radius="9"
-        color="green"
-        ariaLabel="loading"
-        wrapperStyle
-        wrapperClass
-      />
+      <div className="flex items-center justify-center h-full">
+        <Circles
+          height="80"
+          width="80"
+          radius="9"
+          color="green"
+          ariaLabel="loading"
+          wrapperStyle
+          wrapperClass
+        />
+      </div>
+    );
+  }
+  if (bolsaDeValoresData.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center h-full">
+        <p className="font-bold text-center w-full mb-12">Nacional</p>
+
+        <p className="self-center">No hay informacion disponible</p>
+      </div>
     );
   }
 

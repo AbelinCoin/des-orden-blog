@@ -129,7 +129,7 @@ export default async function handler(req, res) {
   try {
     tableData.stocks = await getStocksData(['^IXIC', '^DJI', '^GSPC', '^BVSP', '^GDAXI', '^FTSE', '^FCHI', '^IBEX', 'NYSE:FEZ', '^MERV', '^N225', '^MXX']);
   } catch (error) {
-    console.error(error);
+    console.error('______________________', error);
     errArray.push('Error fetching data from markets sh API');
   }
   // try {

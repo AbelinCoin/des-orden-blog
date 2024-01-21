@@ -21,16 +21,12 @@ const CotizacionesCarousel = () => {
         const res = await axios.get(
           '/api/get-market-data',
         );
-        setCryptoData(res.data.tableData.crypto || []);
-        setStocksData(res.data.tableData.stocks || []);
-        setBolsaDeValores(res.data.tableData.bolsaDeValores.dataBolsa || []);
-        setBolsaDeValoresRenta(res.data.tableData.bolsaDeValores.dataRenta || []);
-        // setCryptoData([]);
-        // setStocksData([]);
-        // setBolsaDeValores([]);
-        // setBolsaDeValoresRenta([]);
+        setCryptoData(res.data.tableData?.crypto || []);
+        setStocksData(res.data.tableData?.stocks || []);
+        setBolsaDeValores(res.data.tableData.bolsaDeValores?.dataBolsa || []);
+        setBolsaDeValoresRenta(res.data.tableData.bolsaDeValores?.dataRenta || []);
+
         setLoading(false);
-        // console.log(res.data.errArray);
       } catch (error) {
         console.error(error);
         setLoading(false);

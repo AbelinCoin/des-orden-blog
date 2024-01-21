@@ -6,15 +6,17 @@ import { Circles } from 'react-loader-spinner';
 const CryptoBox = ({ cryptoData, loading }) => {
   if (loading || cryptoData === null) {
     return (
-      <Circles
-        height="80"
-        width="80"
-        radius="9"
-        color="green"
-        ariaLabel="loading"
-        wrapperStyle
-        wrapperClass
-      />
+      <div className="justify items-center justify-center">
+        <Circles
+          height="80"
+          width="80"
+          radius="9"
+          color="green"
+          ariaLabel="loading"
+          wrapperStyle
+          wrapperClass
+        />
+      </div>
     );
   }
 

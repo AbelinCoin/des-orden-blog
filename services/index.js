@@ -74,6 +74,7 @@ export const getLinksDownload = async () => {
       linksDownloads {
         title
         id
+        createdAt
         asset {
           id
           url
