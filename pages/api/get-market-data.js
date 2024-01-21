@@ -132,12 +132,12 @@ export default async function handler(req, res) {
     console.error(error);
     errArray.push('Error fetching data from markets sh API');
   }
-  try {
-    tableData.bolsaDeValores = await getBolsaDeValoresData();
-  } catch (error) {
-    console.error(error);
-    errArray.push('Error fetching data from bolsa de valores API');
-  }
+  // try {
+  //   tableData.bolsaDeValores = await getBolsaDeValoresData();
+  // } catch (error) {
+  //   console.error(error);
+  //   errArray.push('Error fetching data from bolsa de valores API');
+  // }
 
   res.send({ tableData, errArray });
 }

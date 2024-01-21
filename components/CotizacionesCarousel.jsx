@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import Carousel from 'react-multi-carousel';
 import { Circles } from 'react-loader-spinner';
 import CryptoBox from './CryptoBox';
@@ -18,17 +18,17 @@ const CotizacionesCarousel = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const res = await axios.get(
-        //   '/api/get-market-data',
-        // );
-        // setCryptoData(res.data.tableData.crypto || []);
-        // setStocksData(res.data.tableData.stocks || []);
-        // setBolsaDeValores(res.data.tableData.bolsaDeValores.dataBolsa || []);
-        // setBolsaDeValoresRenta(res.data.tableData.bolsaDeValores.dataRenta || []);
-        setCryptoData([]);
-        setStocksData([]);
-        setBolsaDeValores([]);
-        setBolsaDeValoresRenta([]);
+        const res = await axios.get(
+          '/api/get-market-data',
+        );
+        setCryptoData(res.data.tableData.crypto || []);
+        setStocksData(res.data.tableData.stocks || []);
+        setBolsaDeValores(res.data.tableData.bolsaDeValores.dataBolsa || []);
+        setBolsaDeValoresRenta(res.data.tableData.bolsaDeValores.dataRenta || []);
+        // setCryptoData([]);
+        // setStocksData([]);
+        // setBolsaDeValores([]);
+        // setBolsaDeValoresRenta([]);
         setLoading(false);
         // console.log(res.data.errArray);
       } catch (error) {
@@ -76,7 +76,7 @@ const CotizacionesCarousel = () => {
 
   const chunkArray = (arr, chunkSize) => {
     const chunks = [];
-    for (let i = 0; i < arr.length; i += chunkSize) {
+    for (let i = 0; i < arr?.length; i += chunkSize) {
       chunks.push(arr.slice(i, i + chunkSize));
     }
     return chunks;
