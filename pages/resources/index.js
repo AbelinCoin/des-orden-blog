@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useUser } from '@clerk/nextjs';
 import { getLinksDownload } from '../../services';
 import { AssetsList, NewsLetterBanner, CategoriesBar } from '../../components';
 
 function ResourcesPage({ linksDownload }) {
   const [categorySlug, setCategorySlug] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
+  const info = useUser();
+  const dowloadPermissions = info.user?.publicMetadata || [];
 
   // eslint-disable-next-line no-nested-ternary
   const filteredPosts = categorySlug === 'all'
@@ -27,7 +30,7 @@ function ResourcesPage({ linksDownload }) {
           <h4 className="text-xl text-center py-3 text-secondthegray">Nuestros recursos especiales disponibles para su descarga</h4>
         </div>
         <CategoriesBar isResources setCategorySlug={setCategorySlug} setCurrentPage={setCurrentPage} />
-        <AssetsList linksDownload={currentLinks} />
+        <AssetsList linksDownload={currentLinks} permissions={dowloadPermissions} />
         <NewsLetterBanner />
       </div>
     </div>

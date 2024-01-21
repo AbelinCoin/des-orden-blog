@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import Pagination from './Pagination';
 
-function AssetsList({ linksDownload }) {
+function AssetsList({ linksDownload, permissions }) {
+  const linkRef = useRef(null);
   const mimeTypeMap = {
     'application/pdf': 'PDF',
     'image/jpeg': 'Imagen',
   };
+  // Verify that is has permissions has at least a property
+  const hasPermissionToDowload = Object.keys(permissions).length > 0 && permissions?.rol === 'userAllowed';
 
   // eslint-disable-next-line no-nested-ternary
   const filteredPosts = linksDownload;
@@ -39,11 +42,19 @@ function AssetsList({ linksDownload }) {
         <div className="mr-1 mb-1 bg-black text-white rounded-sm px-2 py-1">{mimeTypeMap[linkData.asset.mimeType]}</div>
       </ul>
       <div className="py-1 text-xl w-4/5 text-center">{linkData.title}</div>
-      <a className="py-3 mb-2 align-center" target="_blank" href={linkData.asset.url} rel="noreferrer">
-        <span className="transition duration-500 ease transform hover:-translate-y-1 inline-block bg-white text-black border border-black text-md font-medium rounded-sm w-4/3 px-6 py-2 cursor-pointer">
-          Descargar <FontAwesomeIcon className="text-md" icon={faChevronDown} />
-        </span>
+      <a ref={linkRef} className="py-3 mb-2 align-center hidden" target="_blank" href={linkData.asset.url} rel="noreferrer">
+        prueba
       </a>
+      <button
+        disabled={!hasPermissionToDowload}
+        type="button"
+        className={
+          `transition duration-500 ease transform hover:-translate-y-1 inline-block bg-white text-black border border-black text-md font-medium rounded-sm w-4/3 px-6 py-2 ${hasPermissionToDowload ? 'cursor-pointer' : 'cursor-not-allowed'} mb-2`
+        }
+        onClick={() => linkRef.current.click()}
+      >
+        Descargar <FontAwesomeIcon className="text-md" icon={faChevronDown} />
+      </button>
     </div>
   );
 
